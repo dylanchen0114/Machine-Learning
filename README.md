@@ -1,3 +1,2 @@
-# Machine-Learning
 
-Project and Code Summary
+# Code and reference Summary
