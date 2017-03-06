@@ -13,18 +13,18 @@ def list_to_dict(convert_list, data_type):
     return add_dict
 
 
-def fill_blank_brand(dateframe, domain_list):
+def fill_blank_brand(dataframe, domain_list):
     for each_domain in domain_list:
-        dateframe['standard_chn_name'][dateframe['standard_en_name'] == each_domain[1]] = each_domain[0]
-        dateframe['standard_en_name'][dateframe['standard_chn_name'] == each_domain[0]] = each_domain[1]
+        dataframe['standard_chn_name'][dataframe['standard_en_name'] == each_domain[1]] = each_domain[0]
+        dataframe['standard_en_name'][dataframe['standard_chn_name'] == each_domain[0]] = each_domain[1]
 
-    dateframe['standard_chn_name'][dateframe['standard_chn_name'].isnull()] = \
-        dateframe['cln_chn_name'][dateframe['standard_chn_name'].isnull()]
+    dataframe['standard_chn_name'][dataframe['standard_chn_name'].isnull()] = \
+        dataframe['cln_chn_name'][dataframe['standard_chn_name'].isnull()]
 
-    dateframe['standard_en_name'][dateframe['standard_en_name'].isnull()] = \
-        dateframe['cln_en_name'][dateframe['standard_en_name'].isnull()]
+    dataframe['standard_en_name'][dataframe['standard_en_name'].isnull()] = \
+        dataframe['cln_en_name'][dataframe['standard_en_name'].isnull()]
 
-    return dateframe
+    return dataframe
 
 
 class BaseReplacer:
